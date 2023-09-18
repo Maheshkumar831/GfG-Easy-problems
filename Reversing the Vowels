@@ -1,0 +1,47 @@
+
+//User function Template for Java
+
+class Solution
+{
+     static boolean isVowel(char c){
+        if(c=='a'||c=='e'||c=='i'||c=='o'||c=='u')
+         {
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+    String modify (String s)
+    {
+        char temp;
+        char c[]=s.toCharArray();
+        int start=0;
+        int end=s.length()-1;
+        while(start<end){
+            if(!isVowel(c[start])){
+                start++;
+            
+            }
+            else if(!isVowel(c[end])){
+                end--;
+            }
+            else{
+                temp=c[start];
+                c[start]=c[end];
+                c[end]=temp;
+                start++;
+                end--;
+            
+        }
+            
+        }
+       
+        String str=String.valueOf(c);
+        return str;
+        
+      
+    }
+    
+   
+}
